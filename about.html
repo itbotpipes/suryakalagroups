@@ -31,17 +31,36 @@
       line-height: 1.6;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', Georgia, serif;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: clamp(28px, 5.5vw, 60px);
+      color: #1a1208;
+      line-height: 1.15;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: clamp(22px, 3vw, 40px);
       color: #1a1208;
       line-height: 1.2;
-      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      color: #1a1208;
+      line-height: 1.2;
     }
 
     p {
       color: #6b5a2a;
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: 15px;
+      line-height: 2;
+      font-weight: 300;
     }
 
     a {
@@ -78,7 +97,7 @@
       transform: translateX(0);
     }
 
-    /* ══════════ NAVBAR ══════════ */
+    /* ══════════ NAVBAR (Exact same as index.html) ══════════ */
     .navbar {
       position: fixed;
       top: 0;
@@ -105,8 +124,9 @@
     }
 
     .logo-img {
-      height: 100%;
-      width: 140px;
+      height: 52px;
+      width: auto;
+      max-width: 280px;
       object-fit: contain;
       display: block;
     }
@@ -120,12 +140,18 @@
       padding: 0;
     }
 
+    .nav-links li {
+      list-style: none;
+    }
+
     .nav-links a {
       color: #6b5a2a;
+      text-decoration: none;
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 600;
+      transition: .3s ease;
     }
 
     .nav-links a:hover,
@@ -157,7 +183,8 @@
         padding: 0 20px;
       }
       .logo-img {
-        width: 110px;
+        height: 100%;
+        max-width: 50%;
       }
       .menu-toggle {
         display: flex;
@@ -179,6 +206,14 @@
       }
       .nav-links.active {
         display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+      }
+      .nav-links a {
+        font-size: 12px;
+        letter-spacing: 3px;
       }
     }
 
@@ -190,36 +225,28 @@
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 5px;
       color: #E2BE66;
-      font-size: 11px;
-      letter-spacing: 3px;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: 12px;
     }
 
-    .eyebrow::before {
-      content: '';
-      width: 24px;
+    .line-divider {
+      width: 56px;
       height: 2px;
       background: #E2BE66;
+      margin: 0 auto;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      margin-bottom: 16px;
-      color: #1a1208;
-    }
-
-    /* Hero Banner - Matching index.html light background */
+    /* Hero Banner (Matching index.html) */
     .page-hero {
       background: #ffffff;
-      padding: 140px 0 70px;
+      padding: 130px 5% 70px;
       position: relative;
       overflow: hidden;
+      text-align: center;
       border-bottom: 1px solid rgba(184, 134, 11, .15);
     }
     .page-hero-glow {
@@ -229,25 +256,23 @@
       pointer-events: none;
     }
 
-    .page-hero h1 {
-      color: #1a1208;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      margin-bottom: 18px;
-    }
-
     .page-hero p.lead {
+      font-size: 16px;
       color: #6b5a2a;
-      font-size: 1.15rem;
+      line-height: 1.95;
       max-width: 650px;
+      margin: 0 auto;
+      font-weight: 300;
     }
 
     .breadcrumb {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 4px;
       color: #8a6a2a;
+      text-transform: uppercase;
       margin-bottom: 18px;
       display: flex;
+      justify-content: center;
       gap: 8px;
     }
     .breadcrumb a {
@@ -270,25 +295,27 @@
     }
     .stat-card {
       text-align: center;
-      padding: 10px;
-      border-right: 1px solid rgba(184, 134, 11, .2);
+      padding: 16px 24px;
+      border: 1px solid rgba(184, 134, 11, .25);
+      background: #fff;
+      transition: all .35s;
     }
-    .stat-card:last-child {
-      border-right: none;
+    .stat-card:hover {
+      border-color: #E2BE66;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(184, 134, 11, .14);
     }
     .stat-card .number {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #6b5a2a;
+      font-size: 26px;
+      color: #E2BE66;
       display: block;
     }
     .stat-card .label {
-      font-size: 11px;
+      font-size: 9px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #6b5a2a;
-      font-weight: 600;
+      color: #8a6a2a;
       margin-top: 4px;
     }
 
@@ -319,18 +346,18 @@
     }
     .feature-card {
       background: #fff;
-      padding: 32px;
+      padding: 36px 28px;
       border: 1px solid rgba(184, 134, 11, .18);
-      box-shadow: 0 2px 16px rgba(0,0,0,.02);
-      transition: all .35s ease;
+      text-align: center;
+      transition: background .3s, transform .3s;
     }
     .feature-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       background: #fdf8ee;
       border-color: #E2BE66;
     }
     .feature-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 12px;
       color: #1a1208;
     }
@@ -364,11 +391,11 @@
       box-shadow: 0 0 0 4px rgba(226, 190, 102, .2);
     }
     .timeline-item h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 6px;
     }
 
-    /* Export Regions - Light Theme */
+    /* Export Regions */
     .export-section {
       background: #fafaf7;
       padding: 90px 0;
@@ -400,11 +427,11 @@
       margin-bottom: 8px;
     }
     .region-box .name {
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #6b5a2a;
-      font-weight: 600;
+      color: #8a6a2a;
+      font-weight: 500;
     }
 
     /* CTA Section */
@@ -423,20 +450,20 @@
       padding: 48px;
     }
     .btn-gold {
-      display: inline-block;
       background: #E2BE66;
       color: #fff;
-      padding: 16px 36px;
+      padding: 14px 36px;
       font-size: 11px;
       letter-spacing: 3px;
-      text-transform: uppercase;
       font-weight: 600;
-      border: none;
+      text-decoration: none;
+      text-transform: uppercase;
       transition: all .35s;
+      display: inline-block;
     }
     .btn-gold:hover {
       background: #d4a017;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: 0 10px 28px rgba(184, 134, 11, .35);
     }
 
@@ -450,10 +477,6 @@
       }
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-      .stat-card {
-        border-right: none;
-        border-bottom: 1px solid rgba(184, 134, 11, .2);
       }
       .regions-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -475,7 +498,7 @@
 
 <body>
 
-  <!-- ══════════ NAVBAR ══════════ -->
+  <!-- ══════════ NAVBAR (Exact index.html) ══════════ -->
   <nav class="navbar">
     <a href="index.html" class="logo-wrap">
       <img src="./ssmi-logo.png" alt="SSMI Logo" class="logo-img" />
@@ -494,15 +517,16 @@
     </button>
   </nav>
 
-  <!-- ══════════ HERO (Matching index.html) ══════════ -->
+  <!-- ══════════ HERO ══════════ -->
   <section class="page-hero">
     <div class="page-hero-glow"></div>
-    <div class="wrap reveal" style="position:relative; z-index:2;">
+    <div style="position:relative; z-index:2; max-width:860px; margin:0 auto;">
       <div class="breadcrumb">
         <a href="index.html">Home</a> / <span>About Us</span>
       </div>
       <div class="eyebrow">Legacy & Craftsmanship</div>
       <h1>Three Decades of Excellence</h1>
+      <div class="line-divider" style="margin: 16px auto 22px;"></div>
       <p class="lead">
         Sri Suryakala Match Industries (SSMI) is a premier safety match manufacturer and global exporter based in Thayilpatti, Tamil Nadu &mdash; committed to single-strike ignition quality for over 30 years.
       </p>
@@ -539,12 +563,13 @@
       <div class="story-grid">
         <div class="reveal-l">
           <div class="eyebrow">Who We Are</div>
-          <h2 class="section-title">Rooted in Tradition, Driven by Precision</h2>
-          <p style="margin-bottom:18px">
+          <h2>Rooted in Tradition, Driven by Precision</h2>
+          <div class="line-divider" style="margin: 12px 0 20px;"></div>
+          <p style="margin-bottom:16px">
             Founded in Thayilpatti, Tamil Nadu — the hub of India's match manufacturing industry — Sri Suryakala Match Industries has grown into a trusted leader across domestic and international markets.
           </p>
-          <p style="margin-bottom:18px">
-            We prioritize customer satisfaction at every step. From custom graphic design and box manufacturing to moisture-proof wrapping and container dispatch, our team ensures a seamless experience.
+          <p style="margin-bottom:16px">
+            We prioritize customer satisfaction at every step. From custom graphic design and box manufacturing to moisture-proof wrapping and container dispatch, our team ensures a smooth, transparent buying experience.
           </p>
           <p>
             Our matchboxes are renowned for single-strike ignition, sturdy splints, non-drooping flames, and longer burning times, meeting international standard specifications.
@@ -566,7 +591,8 @@
     <div class="wrap">
       <div class="reveal" style="text-align:center; max-width:650px; margin: 0 auto;">
         <div class="eyebrow">The SSMI Standard</div>
-        <h2 class="section-title">Why Global Buyers Choose Us</h2>
+        <h2>Why Global Buyers Choose Us</h2>
+        <div class="line-divider" style="margin: 12px auto 20px;"></div>
       </div>
       <div class="features-grid">
         <div class="feature-card reveal">
@@ -602,7 +628,8 @@
     <div class="wrap">
       <div class="reveal">
         <div class="eyebrow">Work Flow</div>
-        <h2 class="section-title">Our Manufacturing Process</h2>
+        <h2>Our Manufacturing Process</h2>
+        <div class="line-divider" style="margin: 12px 0 20px;"></div>
       </div>
       <div class="timeline">
         <div class="timeline-item reveal">
@@ -629,12 +656,13 @@
     </div>
   </section>
 
-  <!-- ══════════ EXPORTS SECTION (Light Theme) ══════════ -->
+  <!-- ══════════ EXPORTS SECTION ══════════ -->
   <section class="export-section">
     <div class="wrap">
       <div class="reveal" style="text-align:center; max-width:650px; margin:0 auto;">
         <div class="eyebrow">Worldwide Delivery</div>
-        <h2 class="section-title">Our Global Reach</h2>
+        <h2>Our Global Reach</h2>
+        <div class="line-divider" style="margin: 12px auto 20px;"></div>
         <p>Serving distributors, wholesalers, and retail brands across major international regions.</p>
       </div>
       <div class="regions-grid reveal">
@@ -655,7 +683,7 @@
       <div class="cta-box reveal">
         <div>
           <div class="eyebrow">Start Your Order</div>
-          <h2 class="section-title" style="margin-bottom:6px">Ready to Partner with SSMI?</h2>
+          <h2 style="margin-bottom:6px">Ready to Partner with SSMI?</h2>
           <p>Contact our export team for samples, custom branding options, and wholesale price quotes.</p>
         </div>
         <a href="contact.html" class="btn-gold">Request Quote &rarr;</a>
@@ -663,7 +691,7 @@
     </div>
   </section>
 
-  <!-- ══════════ FOOTER (Only dark element, exactly like index.html) ══════════ -->
+  <!-- ══════════ FOOTER ══════════ -->
   <footer style="background:#1a1208;padding:40px 5%;border-top:1px solid rgba(184,134,11,.2)">
     <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
       <div style="display:flex;align-items:center;gap:12px">

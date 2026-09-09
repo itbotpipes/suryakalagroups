@@ -31,17 +31,36 @@
       line-height: 1.6;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', Georgia, serif;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: clamp(28px, 5.5vw, 60px);
+      color: #1a1208;
+      line-height: 1.15;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: clamp(22px, 3vw, 40px);
       color: #1a1208;
       line-height: 1.2;
-      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      color: #1a1208;
+      line-height: 1.2;
     }
 
     p {
       color: #6b5a2a;
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: 15px;
+      line-height: 2;
+      font-weight: 300;
     }
 
     a {
@@ -78,7 +97,7 @@
       transform: translateX(0);
     }
 
-    /* ══════════ NAVBAR ══════════ */
+    /* ══════════ NAVBAR (Exact index.html) ══════════ */
     .navbar {
       position: fixed;
       top: 0;
@@ -105,8 +124,9 @@
     }
 
     .logo-img {
-      height: 100%;
-      width: 140px;
+      height: 52px;
+      width: auto;
+      max-width: 280px;
       object-fit: contain;
       display: block;
     }
@@ -120,12 +140,18 @@
       padding: 0;
     }
 
+    .nav-links li {
+      list-style: none;
+    }
+
     .nav-links a {
       color: #6b5a2a;
+      text-decoration: none;
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 600;
+      transition: .3s ease;
     }
 
     .nav-links a:hover,
@@ -157,7 +183,8 @@
         padding: 0 20px;
       }
       .logo-img {
-        width: 110px;
+        height: 100%;
+        max-width: 50%;
       }
       .menu-toggle {
         display: flex;
@@ -179,6 +206,14 @@
       }
       .nav-links.active {
         display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+      }
+      .nav-links a {
+        font-size: 12px;
+        letter-spacing: 3px;
       }
     }
 
@@ -190,36 +225,28 @@
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 5px;
       color: #E2BE66;
-      font-size: 11px;
-      letter-spacing: 3px;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: 12px;
     }
 
-    .eyebrow::before {
-      content: '';
-      width: 24px;
+    .line-divider {
+      width: 56px;
       height: 2px;
       background: #E2BE66;
+      margin: 0 auto;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      margin-bottom: 16px;
-      color: #1a1208;
-    }
-
-    /* Hero Banner - Light Theme (Matching index.html) */
+    /* Hero Banner */
     .page-hero {
       background: #ffffff;
-      padding: 140px 0 70px;
+      padding: 130px 5% 70px;
       position: relative;
       overflow: hidden;
+      text-align: center;
       border-bottom: 1px solid rgba(184, 134, 11, .15);
     }
     .page-hero-glow {
@@ -229,25 +256,23 @@
       pointer-events: none;
     }
 
-    .page-hero h1 {
-      color: #1a1208;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      margin-bottom: 18px;
-    }
-
     .page-hero p.lead {
+      font-size: 16px;
       color: #6b5a2a;
-      font-size: 1.15rem;
+      line-height: 1.95;
       max-width: 650px;
+      margin: 0 auto;
+      font-weight: 300;
     }
 
     .breadcrumb {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 4px;
       color: #8a6a2a;
+      text-transform: uppercase;
       margin-bottom: 18px;
       display: flex;
+      justify-content: center;
       gap: 8px;
     }
     .breadcrumb a {
@@ -281,7 +306,7 @@
     }
     .info-card p, .info-card a {
       color: #6b5a2a;
-      font-size: .95rem;
+      font-size: 15px;
     }
     .info-card a:hover {
       color: #E2BE66;
@@ -308,7 +333,7 @@
     }
     label {
       font-size: 11px;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 600;
       color: #6b5a2a;
@@ -319,7 +344,7 @@
       border: 1px solid rgba(184, 134, 11, .25);
       background: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 1rem;
+      font-size: 15px;
       color: #1a1208;
       outline: none;
       transition: border-color .3s;
@@ -338,7 +363,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: .95rem;
+      font-size: 15px;
       color: #6b5a2a;
       cursor: pointer;
     }
@@ -349,7 +374,7 @@
     .btn-submit {
       background: #E2BE66;
       color: #fff;
-      padding: 18px;
+      padding: 16px;
       font-size: 11px;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -387,7 +412,7 @@
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: .95rem;
+      font-size: 15px;
       color: #6b5a2a;
     }
     .checklist-side li::before {
@@ -414,7 +439,7 @@
 
 <body>
 
-  <!-- ══════════ NAVBAR ══════════ -->
+  <!-- ══════════ NAVBAR (Exact index.html) ══════════ -->
   <nav class="navbar">
     <a href="index.html" class="logo-wrap">
       <img src="./ssmi-logo.png" alt="SSMI Logo" class="logo-img" />
@@ -433,15 +458,16 @@
     </button>
   </nav>
 
-  <!-- ══════════ HERO (Matching index.html) ══════════ -->
+  <!-- ══════════ HERO ══════════ -->
   <section class="page-hero">
     <div class="page-hero-glow"></div>
-    <div class="wrap reveal" style="position:relative; z-index:2;">
+    <div style="position:relative; z-index:2; max-width:860px; margin:0 auto;">
       <div class="breadcrumb">
         <a href="index.html">Home</a> / <span>Contact Us</span>
       </div>
       <div class="eyebrow">Direct Contact</div>
       <h1>Request a Wholesale Quote</h1>
+      <div class="line-divider" style="margin: 16px auto 22px;"></div>
       <p class="lead">
         We specialize in bulk manufacturing and global export orders for distributors, retail chains, and international buyers. Contact our Thayilpatti team today.
       </p>
@@ -476,7 +502,8 @@
 
         <div class="reveal-l">
           <div class="eyebrow">Quotations</div>
-          <h2 class="section-title">Send Us Your Enquiry</h2>
+          <h2>Send Us Your Enquiry</h2>
+          <div class="line-divider" style="margin: 12px 0 20px;"></div>
           <p>Fill out the details below and our export team will respond within 24 business hours.</p>
 
           <form class="form-grid" onsubmit="event.preventDefault(); document.getElementById('submitBtn').textContent='✓ Enquiry Sent!'; setTimeout(()=>document.getElementById('submitBtn').textContent='Send Enquiry →', 3000);">
@@ -551,6 +578,7 @@
         <div class="reveal-r checklist-side" style="margin-top:40px;">
           <div class="eyebrow">Faster Processing</div>
           <h3>What to Include</h3>
+          <div class="line-divider" style="margin: 10px 0 18px;"></div>
           <p style="margin-bottom:20px;">For the fastest turn-around on FOB or CIF export quotes, please mention:</p>
           <ul>
             <li>Preferred safety match brand or custom box size</li>
@@ -565,7 +593,7 @@
     </div>
   </section>
 
-  <!-- ══════════ FOOTER (Only dark element, matching index.html) ══════════ -->
+  <!-- ══════════ FOOTER ══════════ -->
   <footer style="background:#1a1208;padding:40px 5%;border-top:1px solid rgba(184,134,11,.2)">
     <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
       <div style="display:flex;align-items:center;gap:12px">
