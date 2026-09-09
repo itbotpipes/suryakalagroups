@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./ssmi-favicon.png">
+  <title>Contact Us & Quote Request | Sri Suryakala Match Industries</title>
+  <meta name="description"
+    content="Get in touch with Sri Suryakala Match Industries (SSMI) for wholesale pricing, private label quotes, sample requests, and global export inquiries." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #ffffff;
+      color: #1a1208;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #1a1208;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    p {
+      color: #6b5a2a;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+
+    /* Scroll Reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-l {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal-l.on {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-r {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal-r.on {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ══════════ NAVBAR ══════════ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+      box-shadow: 0 2px 24px rgba(0, 0, 0, .06);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      z-index: 10002;
+    }
+
+    .logo-img {
+      height: 100%;
+      width: 140px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #6b5a2a;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #E2BE66;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 10002;
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: #6b5a2a;
+      display: block;
+    }
+
+    @media(max-width:768px) {
+      .navbar {
+        height: 72px;
+        padding: 0 20px;
+      }
+      .logo-img {
+        width: 110px;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none !important;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding: 36px 20px;
+        border-bottom: 1px solid rgba(184, 134, 11, .15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+        z-index: 10000;
+      }
+      .nav-links.active {
+        display: flex !important;
+      }
+    }
+
+    /* Layout Components */
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #E2BE66;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: #E2BE66;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 16px;
+      color: #1a1208;
+    }
+
+    /* Hero Banner - Light Theme (Matching index.html) */
+    .page-hero {
+      background: #ffffff;
+      padding: 140px 0 70px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+    }
+    .page-hero-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 50% 30%, rgba(253, 245, 218, .75) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+    }
+
+    .page-hero h1 {
+      color: #1a1208;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      margin-bottom: 18px;
+    }
+
+    .page-hero p.lead {
+      color: #6b5a2a;
+      font-size: 1.15rem;
+      max-width: 650px;
+    }
+
+    .breadcrumb {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a6a2a;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 8px;
+    }
+    .breadcrumb a {
+      color: #6b5a2a;
+    }
+    .breadcrumb a:hover {
+      color: #E2BE66;
+    }
+
+    /* Info Cards */
+    .info-section {
+      padding: 60px 0;
+      background: #fafaf7;
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid rgba(184, 134, 11, .2);
+      padding: 28px;
+      border-radius: 4px;
+    }
+    .info-card h4 {
+      font-size: 1.1rem;
+      color: #1a1208;
+      margin-bottom: 8px;
+    }
+    .info-card p, .info-card a {
+      color: #6b5a2a;
+      font-size: .95rem;
+    }
+    .info-card a:hover {
+      color: #E2BE66;
+    }
+
+    /* Form Section */
+    .contact-form-section {
+      padding: 90px 0;
+      background: #ffffff;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+    label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #6b5a2a;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid rgba(184, 134, 11, .25);
+      background: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #1a1208;
+      outline: none;
+      transition: border-color .3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #E2BE66;
+      box-shadow: 0 0 0 3px rgba(226, 190, 102, .15);
+    }
+    .check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .95rem;
+      color: #6b5a2a;
+      cursor: pointer;
+    }
+    .check-item input {
+      width: auto;
+    }
+
+    .btn-submit {
+      background: #E2BE66;
+      color: #fff;
+      padding: 18px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: all .35s;
+    }
+    .btn-submit:hover {
+      background: #d4a017;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(184, 134, 11, .35);
+    }
+
+    /* Side info */
+    .checklist-side {
+      background: #fafaf7;
+      padding: 36px;
+      border: 1px solid rgba(184, 134, 11, .2);
+      border-radius: 4px;
+    }
+    .checklist-side h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .checklist-side ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .checklist-side li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .95rem;
+      color: #6b5a2a;
+    }
+    .checklist-side li::before {
+      content: "✓";
+      color: #E2BE66;
+      font-weight: bold;
+    }
+
+    @media(max-width:900px) {
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media(max-width:600px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-wrap">
+      <img src="./ssmi-logo.png" alt="SSMI Logo" class="logo-img" />
+    </a>
+    <ul class="nav-links" id="mobileMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ══════════ HERO (Matching index.html) ══════════ -->
+  <section class="page-hero">
+    <div class="page-hero-glow"></div>
+    <div class="wrap reveal" style="position:relative; z-index:2;">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <span>Contact Us</span>
+      </div>
+      <div class="eyebrow">Direct Contact</div>
+      <h1>Request a Wholesale Quote</h1>
+      <p class="lead">
+        We specialize in bulk manufacturing and global export orders for distributors, retail chains, and international buyers. Contact our Thayilpatti team today.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ INFO CARDS ══════════ -->
+  <section class="info-section">
+    <div class="wrap">
+      <div class="info-grid reveal">
+        <div class="info-card">
+          <h4>Factory Location</h4>
+          <p>Thayilpatti, Virudhunagar District,<br>Tamil Nadu, India</p>
+        </div>
+        <div class="info-card"><h4>Direct Phone</h4><p><a href="tel:+919629689800">+91-9629689800</a></p></div>
+        <div class="info-card">
+          <h4>Business Operations</h4>
+          <p>Safety Match Manufacturing & Exporting<br>Custom OEM & Private Labeling</p>
+        </div>
+        <div class="info-card">
+          <h4>Export Regions</h4>
+          <p>Africa, Middle East, Europe, Americas, Asia & Oceania</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT FORM ══════════ -->
+  <section class="contact-form-section">
+    <div class="wrap">
+      <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap:60px; align-items:flex-start;">
+
+        <div class="reveal-l">
+          <div class="eyebrow">Quotations</div>
+          <h2 class="section-title">Send Us Your Enquiry</h2>
+          <p>Fill out the details below and our export team will respond within 24 business hours.</p>
+
+          <form class="form-grid" onsubmit="event.preventDefault(); document.getElementById('submitBtn').textContent='✓ Enquiry Sent!'; setTimeout(()=>document.getElementById('submitBtn').textContent='Send Enquiry →', 3000);">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input id="name" type="text" placeholder="Full Name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input id="email" type="email" placeholder="name@company.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp *</label>
+              <input id="phone" type="tel" placeholder="+91 90000 00000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="brand">Brand of Interest</label>
+              <select id="brand">
+                <option>Diamond</option>
+                <option>Top Star</option>
+                <option>Agni</option>
+                <option>Ganga</option>
+                <option>Pot Fire</option>
+                <option>Export Brands (4x4 Spark / AIM / Zebra)</option>
+                <option>Custom OEM Private Label</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="freight">Freight Preference</label>
+              <select id="freight">
+                <option>Sea Freight (FCL Container)</option>
+                <option>Sea Freight (LCL Shared)</option>
+                <option>Air Freight Sample</option>
+                <option>To Be Advised</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="qty">Estimated Quantity</label>
+              <input id="qty" type="text" placeholder="e.g. 500 Master Cartons" />
+            </div>
+
+            <div class="form-group">
+              <label for="port">Destination Port / City</label>
+              <input id="port" type="text" placeholder="e.g. Mombasa Port, Kenya" />
+            </div>
+
+            <div class="form-group full">
+              <label for="msg">Order Details & Special Instructions</label>
+              <textarea id="msg" rows="4" placeholder="Mention box size requirements, splint count, packaging preferences, etc."></textarea>
+            </div>
+
+            <div class="form-group full check-list">
+              <label class="check-item">
+                <input type="checkbox" /> Request physical product sample kit
+              </label>
+              <label class="check-item">
+                <input type="checkbox" /> Request custom private label artwork design quote
+              </label>
+            </div>
+
+            <div class="form-group full" style="margin-top:10px;">
+              <button type="submit" id="submitBtn" class="btn-submit">Send Enquiry &rarr;</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="reveal-r checklist-side" style="margin-top:40px;">
+          <div class="eyebrow">Faster Processing</div>
+          <h3>What to Include</h3>
+          <p style="margin-bottom:20px;">For the fastest turn-around on FOB or CIF export quotes, please mention:</p>
+          <ul>
+            <li>Preferred safety match brand or custom box size</li>
+            <li>Stick count per matchbox (e.g. 27's, 40's, 50's, 70's)</li>
+            <li>Target destination port for freight estimation</li>
+            <li>Master carton bundling preferences</li>
+            <li>Requirement for physical sample dispatch</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER (Only dark element, matching index.html) ══════════ -->
+  <footer style="background:#1a1208;padding:40px 5%;border-top:1px solid rgba(184,134,11,.2)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="./ssmi-favicon.png" alt="SSMI Logo" style="width:60px;height:60px;object-fit:contain" />
+        <div>
+          <div style="font-size:9px;letter-spacing:1.5px;color:#E2BE66;margin-top:2px">SRI SURYAKALA MATCH INDUSTRIES</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="index.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Home</a>
+        <a href="about.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">About</a>
+        <a href="product.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Products</a>
+        <a href="gallery.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Gallery</a>
+        <a href="contact.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Contact</a>
+      </div>
+      <p style="font-size:11px;color:#E2BE66;letter-spacing:1px">© 2024 Sri Suryakala Match Industries · Thayilpatti, Tamilnadu</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('active');
+      });
+    });
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) } });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

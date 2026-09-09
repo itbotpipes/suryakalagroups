@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./ssmi-favicon.png">
+  <title>Gallery | Sri Suryakala Match Industries</title>
+  <meta name="description"
+    content="Explore photos of Sri Suryakala Match Industries safety match manufacturing facility, automated production lines, quality assurance, packaging, and export warehouse in Thayilpatti." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #ffffff;
+      color: #1a1208;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #1a1208;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    p {
+      color: #6b5a2a;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+
+    /* Scroll Reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-s {
+      opacity: 0;
+      transform: scale(.9);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal-s.on {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ══════════ NAVBAR ══════════ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+      box-shadow: 0 2px 24px rgba(0, 0, 0, .06);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      z-index: 10002;
+    }
+
+    .logo-img {
+      height: 100%;
+      width: 140px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #6b5a2a;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #E2BE66;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 10002;
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: #6b5a2a;
+      display: block;
+    }
+
+    @media(max-width:768px) {
+      .navbar {
+        height: 72px;
+        padding: 0 20px;
+      }
+      .logo-img {
+        width: 110px;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none !important;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding: 36px 20px;
+        border-bottom: 1px solid rgba(184, 134, 11, .15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+        z-index: 10000;
+      }
+      .nav-links.active {
+        display: flex !important;
+      }
+    }
+
+    /* Layout Components */
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #E2BE66;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: #E2BE66;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 16px;
+      color: #1a1208;
+    }
+
+    /* Hero Banner - Light Theme (Matching index.html) */
+    .page-hero {
+      background: #ffffff;
+      padding: 140px 0 70px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+    }
+    .page-hero-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 50% 30%, rgba(253, 245, 218, .75) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+    }
+
+    .page-hero h1 {
+      color: #1a1208;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      margin-bottom: 18px;
+    }
+
+    .page-hero p.lead {
+      color: #6b5a2a;
+      font-size: 1.15rem;
+      max-width: 650px;
+    }
+
+    .breadcrumb {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a6a2a;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 8px;
+    }
+    .breadcrumb a {
+      color: #6b5a2a;
+    }
+    .breadcrumb a:hover {
+      color: #E2BE66;
+    }
+
+    /* Gallery Grid */
+    .gallery-section {
+      padding: 90px 0;
+      background: #ffffff;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .gallery-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fafaf7;
+      border: 1px solid rgba(184, 134, 11, .2);
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      box-shadow: 0 2px 16px rgba(0,0,0,.02);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+      display: block;
+    }
+    .gallery-card:hover img {
+      transform: scale(1.08);
+    }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(26, 18, 8, .75) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      transition: opacity .3s;
+    }
+    .gallery-overlay h3 {
+      color: #fff;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+    .gallery-overlay span {
+      color: #E2BE66;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .85);
+      z-index: 100000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85vh;
+      object-fit: contain;
+      border: 2px solid #E2BE66;
+      box-shadow: 0 0 30px rgba(226, 190, 102, .3);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      color: #E2BE66;
+      font-size: 2.5rem;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+    .cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      background: #fafaf7;
+      border: 1px solid rgba(184, 134, 11, .2);
+      padding: 48px;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: #E2BE66;
+      color: #fff;
+      padding: 16px 36px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      transition: all .35s;
+    }
+    .btn-gold:hover {
+      background: #d4a017;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(184, 134, 11, .35);
+    }
+
+    @media(max-width:900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width:600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-box {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-wrap">
+      <img src="./ssmi-logo.png" alt="SSMI Logo" class="logo-img" />
+    </a>
+    <ul class="nav-links" id="mobileMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ══════════ HERO (Matching index.html) ══════════ -->
+  <section class="page-hero">
+    <div class="page-hero-glow"></div>
+    <div class="wrap reveal" style="position:relative; z-index:2;">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <span>Gallery</span>
+      </div>
+      <div class="eyebrow">Facility Showcase</div>
+      <h1>Production & Factory Gallery</h1>
+      <p class="lead">
+        A glimpse inside Sri Suryakala Match Industries' Thayilpatti manufacturing plant — from splint chemistry and inner box printing to bundle wrapping and container stuffing.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ GALLERY GRID ══════════ -->
+  <section class="gallery-section">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center; max-width:650px; margin:0 auto;">
+        <div class="eyebrow">Visual Tour</div>
+        <h2 class="section-title">Behind the Flame</h2>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.16 PM.jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.16 PM.jpeg" alt="Safety Match Manufacturing" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Manufacturing Unit</h3>
+            <span>Thayilpatti Facility</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.17 PM (1).jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.17 PM (1).jpeg" alt="Packaging Line" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Automated Packaging</h3>
+            <span>Precision Bundle Wrapping</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.17 PM.jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.17 PM.jpeg" alt="Quality Check" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Quality Inspection</h3>
+            <span>Batch Friction Testing</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.18 PM (1).jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.18 PM (1).jpeg" alt="Production Machinery" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Production Lines</h3>
+            <span>High-Speed Machine Unit</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.19 PM (1).jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.19 PM (1).jpeg" alt="Warehouse Storage" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Export Warehouse</h3>
+            <span>Moisture-Controlled Storage</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.21 PM.jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.21 PM.jpeg" alt="Dispatch Logistics" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Container Logistics</h3>
+            <span>Global Export Dispatch</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.22 PM.jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.22 PM.jpeg" alt="Brand Bundles" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Finished Brand Bundles</h3>
+            <span>Market-Ready Bundles</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.20 PM.jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.20 PM.jpeg" alt="Splint Preparation" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Splint Processing</h3>
+            <span>Wood Carbonization</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal-s" onclick="openLightbox('./product photo/WhatsApp Image 2026-05-15 at 12.43.20 PM (1).jpeg')">
+          <img src="./product photo/WhatsApp Image 2026-05-15 at 12.43.20 PM (1).jpeg" alt="Chemical Dipping" loading="lazy" />
+          <div class="gallery-overlay">
+            <h3>Match Head Composition</h3>
+            <span>Single-Strike Dipping</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ LIGHTBOX MODAL ══════════ -->
+  <div class="lightbox" id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImg" src="" alt="Enlarged view" />
+  </div>
+
+  <!-- ══════════ CTA BAND ══════════ -->
+  <section class="cta-section">
+    <div class="wrap">
+      <div class="cta-box reveal">
+        <div>
+          <div class="eyebrow">Facility Tour & Samples</div>
+          <h2 class="section-title" style="margin-bottom:6px">Want Full Quality Reports & Samples?</h2>
+          <p>We provide physical sample kits and complete production video walkthroughs for wholesale buyers.</p>
+        </div>
+        <a href="contact.html" class="btn-gold">Request Samples &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER (Only dark element, matching index.html) ══════════ -->
+  <footer style="background:#1a1208;padding:40px 5%;border-top:1px solid rgba(184,134,11,.2)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="./ssmi-favicon.png" alt="SSMI Logo" style="width:60px;height:60px;object-fit:contain" />
+        <div>
+          <div style="font-size:9px;letter-spacing:1.5px;color:#E2BE66;margin-top:2px">SRI SURYAKALA MATCH INDUSTRIES</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="index.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Home</a>
+        <a href="about.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">About</a>
+        <a href="product.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Products</a>
+        <a href="gallery.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Gallery</a>
+        <a href="contact.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Contact</a>
+      </div>
+      <p style="font-size:11px;color:#E2BE66;letter-spacing:1px">© 2024 Sri Suryakala Match Industries · Thayilpatti, Tamilnadu</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('active');
+      });
+    });
+
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxModal').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) } });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal,.reveal-s').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

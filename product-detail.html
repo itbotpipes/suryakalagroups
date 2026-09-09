@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./ssmi-favicon.png">
+  <title>Product Specifications & Details | Sri Suryakala Match Industries</title>
+  <meta name="description"
+    content="Detailed specifications, dimensions, stick counts, and packaging details for Sri Suryakala Match Industries safety match brands: Diamond, Top Star, Agni, Ganga, Pot Fire, and export private labels." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #ffffff;
+      color: #1a1208;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #1a1208;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    p {
+      color: #6b5a2a;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+
+    /* Scroll Reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ══════════ NAVBAR ══════════ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+      box-shadow: 0 2px 24px rgba(0, 0, 0, .06);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      z-index: 10002;
+    }
+
+    .logo-img {
+      height: 100%;
+      width: 140px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #6b5a2a;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #E2BE66;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 10002;
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: #6b5a2a;
+      display: block;
+    }
+
+    @media(max-width:768px) {
+      .navbar {
+        height: 72px;
+        padding: 0 20px;
+      }
+      .logo-img {
+        width: 110px;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none !important;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding: 36px 20px;
+        border-bottom: 1px solid rgba(184, 134, 11, .15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+        z-index: 10000;
+      }
+      .nav-links.active {
+        display: flex !important;
+      }
+    }
+
+    /* Layout Components */
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #E2BE66;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: #E2BE66;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 16px;
+      color: #1a1208;
+    }
+
+    /* Hero Banner - Light Theme (Matching index.html) */
+    .page-hero {
+      background: #ffffff;
+      padding: 140px 0 70px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+    }
+    .page-hero-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 50% 30%, rgba(253, 245, 218, .75) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+    }
+
+    .page-hero h1 {
+      color: #1a1208;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      margin-bottom: 18px;
+    }
+
+    .page-hero p.lead {
+      color: #6b5a2a;
+      font-size: 1.15rem;
+      max-width: 650px;
+    }
+
+    .breadcrumb {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a6a2a;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 8px;
+    }
+    .breadcrumb a {
+      color: #6b5a2a;
+    }
+    .breadcrumb a:hover {
+      color: #E2BE66;
+    }
+
+    /* Jump links */
+    .jumplinks {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .jumplinks a {
+      border: 1px solid rgba(184, 134, 11, .3);
+      color: #6b5a2a;
+      padding: 10px 20px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 30px;
+      background: #fafaf7;
+      transition: all .3s;
+    }
+    .jumplinks a:hover {
+      background: #E2BE66;
+      color: #fff;
+      border-color: #E2BE66;
+    }
+
+    /* Product Sections */
+    .product-section {
+      padding: 90px 0;
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+      background: #ffffff;
+    }
+    .product-section:nth-child(even) {
+      background: #fafaf7;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    .brand-box-display {
+      aspect-ratio: 1;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,.03);
+      border: 1px solid rgba(184, 134, 11, .25);
+    }
+    .brand-box-display .bname {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #1a1208;
+    }
+    .brand-box-display .btag {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 8px;
+      color: #6b5a2a;
+      font-weight: 600;
+    }
+
+    .detail-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .detail-tag {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a6a2a;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+    .spec-table tr {
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+    }
+    .spec-table td {
+      padding: 12px 0;
+      font-size: .95rem;
+      color: #1a1208;
+    }
+    .spec-table td:first-child {
+      color: #6b5a2a;
+      font-weight: 600;
+      width: 35%;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: #E2BE66;
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      transition: all .35s;
+    }
+    .btn-gold:hover {
+      background: #d4a017;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(184, 134, 11, .35);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid #E2BE66;
+      color: #E2BE66;
+      padding: 14px 28px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all .35s;
+    }
+    .btn-outline:hover {
+      background: rgba(184,134,11,.08);
+      transform: translateY(-2px);
+    }
+
+    @media(max-width:900px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .brand-box-display {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-wrap">
+      <img src="./ssmi-logo.png" alt="SSMI Logo" class="logo-img" />
+    </a>
+    <ul class="nav-links" id="mobileMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="product.html" class="active">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ══════════ HERO (Matching index.html) ══════════ -->
+  <section class="page-hero">
+    <div class="page-hero-glow"></div>
+    <div class="wrap reveal" style="position:relative; z-index:2;">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <a href="product.html">Products</a> / <span>Specifications</span>
+      </div>
+      <div class="eyebrow">Technical Data</div>
+      <h1>Brand Specifications & Formats</h1>
+      <p class="lead">
+        Detailed breakdown of dimensions, stick counts, carton configurations, and packaging options for each of our safety match brands.
+      </p>
+
+      <div class="jumplinks">
+        <a href="#diamond">Diamond</a>
+        <a href="#topstar">Top Star</a>
+        <a href="#agni">Agni</a>
+        <a href="#ganga">Ganga</a>
+        <a href="#potfire">Pot Fire</a>
+        <a href="#export">Export Brands</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ DIAMOND ══════════ -->
+  <section id="diamond" class="product-section">
+    <div class="wrap">
+      <div class="detail-grid reveal">
+        <div class="brand-box-display">
+          <span class="bname">DIAMOND</span>
+          <span class="btag">SAFETY MATCHES</span>
+        </div>
+        <div class="detail-content">
+          <span class="detail-tag">Domestic Flagship Brand</span>
+          <h2>Diamond Safety Matches</h2>
+          <p>
+            Diamond is one of our premier domestic match brands, crafted with a high-density striking friction surface and sturdy outer box construction. Preferred by retail buyers across southern India.
+          </p>
+
+          <table class="spec-table">
+            <tr><td>Format / Count</td><td>27's matchsticks per box</td></tr>
+            <tr><td>Box Dimensions</td><td>45 × 96 mm</td></tr>
+            <tr><td>Box Material</td><td>Duplex Board / Cardboard</td></tr>
+            <tr><td>Splint Type</td><td>High-ignition splints with safety match head formulation</td></tr>
+            <tr><td>Outer Packaging</td><td>Cellophane-wrapped bundles & sturdy corrugated master cartons</td></tr>
+            <tr><td>Customization</td><td>Private brand logo overlays & barcode options available</td></tr>
+          </table>
+
+          <div class="action-row">
+            <a href="contact.html" class="btn-gold">Request Quote for Diamond &rarr;</a>
+            <a href="product.html" class="btn-outline">All Brands</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ TOP STAR ══════════ -->
+  <section id="topstar" class="product-section">
+    <div class="wrap">
+      <div class="detail-grid reveal">
+        <div class="brand-box-display" style="background:#fdf8ee;">
+          <span class="bname">TOP STAR ★</span>
+          <span class="btag">SAFETY MATCHES</span>
+        </div>
+        <div class="detail-content">
+          <span class="detail-tag">Everyday Household Staple</span>
+          <h2>Top Star Safety Matches</h2>
+          <p>
+            Instantly recognizable by its iconic yellow matchbox design featuring a flaming star emblem. Top Star offers high consumer brand loyalty across urban and rural markets.
+          </p>
+
+          <table class="spec-table">
+            <tr><td>Format / Count</td><td>27's & 50's options available</td></tr>
+            <tr><td>Box Dimensions</td><td>45 × 96 mm and 50 × 104.6 mm</td></tr>
+            <tr><td>Price Point</td><td>Designed for mass everyday pricing</td></tr>
+            <tr><td>Ignition Standard</td><td>Single strike instant ignition</td></tr>
+            <tr><td>Master Bundling</td><td>10-box polypacks in 100-box or 600-box master cartons</td></tr>
+          </table>
+
+          <div class="action-row">
+            <a href="contact.html" class="btn-gold">Request Quote for Top Star &rarr;</a>
+            <a href="product.html" class="btn-outline">All Brands</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ AGNI ══════════ -->
+  <section id="agni" class="product-section">
+    <div class="wrap">
+      <div class="detail-grid reveal">
+        <div class="brand-box-display">
+          <span class="bname">AGNI</span>
+          <span class="btag">MEGA MATCHES</span>
+        </div>
+        <div class="detail-content">
+          <span class="detail-tag">High-Capacity Mega Range</span>
+          <h2>Agni Mega Safety Matches</h2>
+          <p>
+            Engineered for maximum stick capacity, Agni features a high count of 70 sticks per box. Perfect for heavy household cooking, catering, and institutional use.
+          </p>
+
+          <table class="spec-table">
+            <tr><td>Format / Count</td><td>70's Mega Stick Capacity</td></tr>
+            <tr><td>Packaging Format</td><td>Mega box format with fire-altar artwork</td></tr>
+            <tr><td>Burn Duration</td><td>Extended flame burn time per stick</td></tr>
+            <tr><td>Target Segment</td><td>Wholesale distribution, hotels, catering, and large households</td></tr>
+          </table>
+
+          <div class="action-row">
+            <a href="contact.html" class="btn-gold">Request Quote for Agni &rarr;</a>
+            <a href="product.html" class="btn-outline">All Brands</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ GANGA ══════════ -->
+  <section id="ganga" class="product-section">
+    <div class="wrap">
+      <div class="detail-grid reveal">
+        <div class="brand-box-display" style="background:#fdf8ee;">
+          <span class="bname">GANGA</span>
+          <span class="btag">SAFETY MATCHES</span>
+        </div>
+        <div class="detail-content">
+          <span class="detail-tag">Regional Favorite</span>
+          <h2>Ganga Safety Matches</h2>
+          <p>
+            Featuring a serene mountain artwork, Ganga delivers consistent quality and reliability at an accessible price point for regional distributors.
+          </p>
+
+          <table class="spec-table">
+            <tr><td>Format / Count</td><td>35's matchstick count</td></tr>
+            <tr><td>Box Dimensions</td><td>47 × 100 mm</td></tr>
+            <tr><td>Ignition Quality</td><td>Moisture-resistant striking band</td></tr>
+            <tr><td>Distribution</td><td>Available across pan-India wholesaler networks</td></tr>
+          </table>
+
+          <div class="action-row">
+            <a href="contact.html" class="btn-gold">Request Quote for Ganga &rarr;</a>
+            <a href="product.html" class="btn-outline">All Brands</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ POT FIRE ══════════ -->
+  <section id="potfire" class="product-section">
+    <div class="wrap">
+      <div class="detail-grid reveal">
+        <div class="brand-box-display">
+          <span class="bname">POT FIRE</span>
+          <span class="btag">KITCHEN MATCHES</span>
+        </div>
+        <div class="detail-content">
+          <span class="detail-tag">Culinary & Kitchen Segment</span>
+          <h2>Pot Fire Safety Matches</h2>
+          <p>
+            Vibrant yellow design tailored for kitchen use. Features carbonized splints that resist breaking when striking under pressure.
+          </p>
+
+          <table class="spec-table">
+            <tr><td>Format / Count</td><td>Standard Household Box Count</td></tr>
+            <tr><td>Splint Finish</td><td>Smooth finished carbonized wooden splints</td></tr>
+            <tr><td>Use Case</td><td>Stove lighting, incense, candle, and general kitchen usage</td></tr>
+          </table>
+
+          <div class="action-row">
+            <a href="contact.html" class="btn-gold">Request Quote for Pot Fire &rarr;</a>
+            <a href="product.html" class="btn-outline">All Brands</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ EXPORT BRANDS ══════════ -->
+  <section id="export" class="product-section">
+    <div class="wrap">
+      <div class="detail-grid reveal">
+        <div class="brand-box-display" style="background:#fdf8ee;">
+          <span class="bname" style="font-size:1.4rem;">4x4 SPARK • AIM • ZEBRA</span>
+          <span class="btag">EXPORT BRANDS</span>
+        </div>
+        <div class="detail-content">
+          <span class="detail-tag">International Private Labeling</span>
+          <h2>Export Brands & Custom OEM</h2>
+          <p>
+            We manufacture established export brands including Bonjourne, 4x4 Spark, Scissors, AIM, Zebra, and MO. Additionally, we provide complete OEM private label manufacturing tailored to buyer artwork and box dimensions.
+          </p>
+
+          <table class="spec-table">
+            <tr><td>Export Portfolio</td><td>Bonjourne, 4x4 Spark, Scissors, AIM, Zebra, MO</td></tr>
+            <tr><td>Private Labeling</td><td>Custom box artwork, barcoding, and localized text printing</td></tr>
+            <tr><td>Export Packaging</td><td>Heavy-duty moisture-barrier shrink wraps & export-grade shipping cartons</td></tr>
+            <tr><td>Container Stuffing</td><td>20ft and 40ft FCL container optimization</td></tr>
+          </table>
+
+          <div class="action-row">
+            <a href="contact.html" class="btn-gold">Request Custom OEM Quote &rarr;</a>
+            <a href="product.html" class="btn-outline">All Brands</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER (Only dark element, matching index.html) ══════════ -->
+  <footer style="background:#1a1208;padding:40px 5%;border-top:1px solid rgba(184,134,11,.2)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="./ssmi-favicon.png" alt="SSMI Logo" style="width:60px;height:60px;object-fit:contain" />
+        <div>
+          <div style="font-size:9px;letter-spacing:1.5px;color:#E2BE66;margin-top:2px">SRI SURYAKALA MATCH INDUSTRIES</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="index.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Home</a>
+        <a href="about.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">About</a>
+        <a href="product.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Products</a>
+        <a href="gallery.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Gallery</a>
+        <a href="contact.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Contact</a>
+      </div>
+      <p style="font-size:11px;color:#E2BE66;letter-spacing:1px">© 2024 Sri Suryakala Match Industries · Thayilpatti, Tamilnadu</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('active');
+      });
+    });
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) } });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./ssmi-favicon.png">
+  <title>About Us | Sri Suryakala Match Industries</title>
+  <meta name="description"
+    content="Sri Suryakala Match Industries (SSMI) — renowned manufacturer and exporter of premium safety matches from Thayilpatti, Tamil Nadu, trusted across India and globally for over three decades." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #ffffff;
+      color: #1a1208;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #1a1208;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    p {
+      color: #6b5a2a;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+
+    /* Scroll Reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-l {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal-l.on {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-r {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal-r.on {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ══════════ NAVBAR ══════════ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+      box-shadow: 0 2px 24px rgba(0, 0, 0, .06);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      z-index: 10002;
+    }
+
+    .logo-img {
+      height: 100%;
+      width: 140px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #6b5a2a;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #E2BE66;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 10002;
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: #6b5a2a;
+      display: block;
+    }
+
+    @media(max-width:768px) {
+      .navbar {
+        height: 72px;
+        padding: 0 20px;
+      }
+      .logo-img {
+        width: 110px;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none !important;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding: 36px 20px;
+        border-bottom: 1px solid rgba(184, 134, 11, .15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+        z-index: 10000;
+      }
+      .nav-links.active {
+        display: flex !important;
+      }
+    }
+
+    /* Layout Components */
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #E2BE66;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: #E2BE66;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 16px;
+      color: #1a1208;
+    }
+
+    /* Hero Banner - Matching index.html light background */
+    .page-hero {
+      background: #ffffff;
+      padding: 140px 0 70px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+    }
+    .page-hero-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 50% 30%, rgba(253, 245, 218, .75) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+    }
+
+    .page-hero h1 {
+      color: #1a1208;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      margin-bottom: 18px;
+    }
+
+    .page-hero p.lead {
+      color: #6b5a2a;
+      font-size: 1.15rem;
+      max-width: 650px;
+    }
+
+    .breadcrumb {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a6a2a;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 8px;
+    }
+    .breadcrumb a {
+      color: #6b5a2a;
+    }
+    .breadcrumb a:hover {
+      color: #E2BE66;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: #fafaf7;
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+      padding: 40px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 10px;
+      border-right: 1px solid rgba(184, 134, 11, .2);
+    }
+    .stat-card:last-child {
+      border-right: none;
+    }
+    .stat-card .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #6b5a2a;
+      display: block;
+    }
+    .stat-card .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6b5a2a;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* Content Section */
+    .story-section {
+      padding: 90px 0;
+      background: #ffffff;
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    /* Feature Grid */
+    .features-section {
+      background: #fafaf7;
+      padding: 90px 0;
+      border-top: 1px solid rgba(184, 134, 11, .15);
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .feature-card {
+      background: #fff;
+      padding: 32px;
+      border: 1px solid rgba(184, 134, 11, .18);
+      box-shadow: 0 2px 16px rgba(0,0,0,.02);
+      transition: all .35s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      background: #fdf8ee;
+      border-color: #E2BE66;
+    }
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #1a1208;
+    }
+
+    /* Process Timeline */
+    .process-section {
+      padding: 90px 0;
+      background: #ffffff;
+    }
+    .timeline {
+      margin-top: 50px;
+      border-left: 2px solid #E2BE66;
+      padding-left: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      max-width: 800px;
+    }
+    .timeline-item {
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -43px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #E2BE66;
+      box-shadow: 0 0 0 4px rgba(226, 190, 102, .2);
+    }
+    .timeline-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    /* Export Regions - Light Theme */
+    .export-section {
+      background: #fafaf7;
+      padding: 90px 0;
+      border-top: 1px solid rgba(184, 134, 11, .15);
+      border-bottom: 1px solid rgba(184, 134, 11, .15);
+    }
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .region-box {
+      background: #ffffff;
+      border: 1px solid rgba(184, 134, 11, .2);
+      padding: 24px 10px;
+      text-align: center;
+      border-radius: 4px;
+      transition: all .3s;
+    }
+    .region-box:hover {
+      background: #fdf8ee;
+      border-color: #E2BE66;
+      transform: translateY(-3px);
+    }
+    .region-box .icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .region-box .name {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #6b5a2a;
+      font-weight: 600;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+    .cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      background: #fafaf7;
+      border: 1px solid rgba(184, 134, 11, .2);
+      padding: 48px;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: #E2BE66;
+      color: #fff;
+      padding: 16px 36px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      transition: all .35s;
+    }
+    .btn-gold:hover {
+      background: #d4a017;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(184, 134, 11, .35);
+    }
+
+    @media(max-width:900px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stat-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(184, 134, 11, .2);
+      }
+      .regions-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media(max-width:600px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .regions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cta-box {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-wrap">
+      <img src="./ssmi-logo.png" alt="SSMI Logo" class="logo-img" />
+    </a>
+    <ul class="nav-links" id="mobileMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ══════════ HERO (Matching index.html) ══════════ -->
+  <section class="page-hero">
+    <div class="page-hero-glow"></div>
+    <div class="wrap reveal" style="position:relative; z-index:2;">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <span>About Us</span>
+      </div>
+      <div class="eyebrow">Legacy & Craftsmanship</div>
+      <h1>Three Decades of Excellence</h1>
+      <p class="lead">
+        Sri Suryakala Match Industries (SSMI) is a premier safety match manufacturer and global exporter based in Thayilpatti, Tamil Nadu &mdash; committed to single-strike ignition quality for over 30 years.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ STATS BAR ══════════ -->
+  <section class="stats-bar">
+    <div class="wrap">
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <span class="number">30+</span>
+          <span class="label">Years Experience</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">SSMI</span>
+          <span class="label">Premium Standards</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">7+</span>
+          <span class="label">Global Regions</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">100%</span>
+          <span class="label">Quality Assured</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ STORY SECTION ══════════ -->
+  <section class="story-section">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="reveal-l">
+          <div class="eyebrow">Who We Are</div>
+          <h2 class="section-title">Rooted in Tradition, Driven by Precision</h2>
+          <p style="margin-bottom:18px">
+            Founded in Thayilpatti, Tamil Nadu — the hub of India's match manufacturing industry — Sri Suryakala Match Industries has grown into a trusted leader across domestic and international markets.
+          </p>
+          <p style="margin-bottom:18px">
+            We prioritize customer satisfaction at every step. From custom graphic design and box manufacturing to moisture-proof wrapping and container dispatch, our team ensures a seamless experience.
+          </p>
+          <p>
+            Our matchboxes are renowned for single-strike ignition, sturdy splints, non-drooping flames, and longer burning times, meeting international standard specifications.
+          </p>
+        </div>
+        <div class="reveal-r" style="display:flex; justify-content:center;">
+          <svg width="220" height="280" viewBox="0 0 220 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M110 316 L110 100" stroke="#E2BE66" stroke-width="12" stroke-linecap="round"/>
+            <ellipse cx="110" cy="72" rx="36" ry="44" fill="#E2BE66"/>
+            <ellipse cx="110" cy="60" rx="22" ry="28" fill="#6b5a2a"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FEATURES SECTION ══════════ -->
+  <section class="features-section">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center; max-width:650px; margin: 0 auto;">
+        <div class="eyebrow">The SSMI Standard</div>
+        <h2 class="section-title">Why Global Buyers Choose Us</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <h3>Single Strike Ignition</h3>
+          <p>Guaranteed instant ignition on the very first strike, engineered for smooth consistency and safety.</p>
+        </div>
+        <div class="feature-card reveal">
+          <h3>Moisture-Proof Packaging</h3>
+          <p>Advanced protective packaging ensures matches stay crisp and functional across all climates.</p>
+        </div>
+        <div class="feature-card reveal">
+          <h3>Longer Burning Time</h3>
+          <p>Specially formulated chemical composition provides a steady, extended flame duration.</p>
+        </div>
+        <div class="feature-card reveal">
+          <h3>Custom Private Labeling</h3>
+          <p>End-to-end custom box printing and branding tailored to your market specifications.</p>
+        </div>
+        <div class="feature-card reveal">
+          <h3>In-House Production</h3>
+          <p>From splints to outer box finishing, complete quality control is maintained in our facility.</p>
+        </div>
+        <div class="feature-card reveal">
+          <h3>Competitive Pricing</h3>
+          <p>Exceptional quality delivered at competitive wholesale rates for high-volume orders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PROCESS TIMELINE ══════════ -->
+  <section class="process-section">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Work Flow</div>
+        <h2 class="section-title">Our Manufacturing Process</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <h3>1. Custom Artwork & Design</h3>
+          <p>Our in-house design team develops precise layout proofs for buyer brand requirements.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <h3>2. Splint & Box Manufacturing</h3>
+          <p>High-grade wood/cardboard elements are crafted using modern high-speed machinery.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <h3>3. Quality Testing & Inspection</h3>
+          <p>Every production batch undergoes strict quality checks for ignition, burn time, and moisture resistance.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <h3>4. Moisture-Proof Wrapping</h3>
+          <p>Boxes are wrapped in protective bundles and master cartons ready for transit.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <h3>5. Global Export Dispatch</h3>
+          <p>Efficient container stuffing and direct logistics handling for timely international delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ EXPORTS SECTION (Light Theme) ══════════ -->
+  <section class="export-section">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center; max-width:650px; margin:0 auto;">
+        <div class="eyebrow">Worldwide Delivery</div>
+        <h2 class="section-title">Our Global Reach</h2>
+        <p>Serving distributors, wholesalers, and retail brands across major international regions.</p>
+      </div>
+      <div class="regions-grid reveal">
+        <div class="region-box"><span class="icon">🌍</span><span class="name">Africa</span></div>
+        <div class="region-box"><span class="icon">🏛️</span><span class="name">Middle East</span></div>
+        <div class="region-box"><span class="icon">🏰</span><span class="name">E. Europe</span></div>
+        <div class="region-box"><span class="icon">⛰️</span><span class="name">S. America</span></div>
+        <div class="region-box"><span class="icon">🌴</span><span class="name">C. America</span></div>
+        <div class="region-box"><span class="icon">🌏</span><span class="name">Asia</span></div>
+        <div class="region-box"><span class="icon">🦘</span><span class="name">Oceania</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA BAND ══════════ -->
+  <section class="cta-section">
+    <div class="wrap">
+      <div class="cta-box reveal">
+        <div>
+          <div class="eyebrow">Start Your Order</div>
+          <h2 class="section-title" style="margin-bottom:6px">Ready to Partner with SSMI?</h2>
+          <p>Contact our export team for samples, custom branding options, and wholesale price quotes.</p>
+        </div>
+        <a href="contact.html" class="btn-gold">Request Quote &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER (Only dark element, exactly like index.html) ══════════ -->
+  <footer style="background:#1a1208;padding:40px 5%;border-top:1px solid rgba(184,134,11,.2)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="./ssmi-favicon.png" alt="SSMI Logo" style="width:60px;height:60px;object-fit:contain" />
+        <div>
+          <div style="font-size:9px;letter-spacing:1.5px;color:#E2BE66;margin-top:2px">SRI SURYAKALA MATCH INDUSTRIES</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="index.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Home</a>
+        <a href="about.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">About</a>
+        <a href="product.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Products</a>
+        <a href="gallery.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Gallery</a>
+        <a href="contact.html" style="color:#E2BE66;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s">Contact</a>
+      </div>
+      <p style="font-size:11px;color:#E2BE66;letter-spacing:1px">© 2024 Sri Suryakala Match Industries · Thayilpatti, Tamilnadu</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('active');
+      });
+    });
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) } });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
